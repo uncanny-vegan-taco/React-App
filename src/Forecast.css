@@ -1,0 +1,14 @@
+.weather-forecast {
+  text-align: center;
+  height: 100px;
+  margin-bottom: 10px;
+}
+.forecast-icon {
+  width: 100%;
+}
+.forecast-temps {
+  font-size: 0.93em;
+}
+.forecast-high {
+  font-weight: bold;
+}

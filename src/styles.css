@@ -1,0 +1,25 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(42, 42, 201, 0.411);
+}
+.content {
+  display: block;
+  margin: 0 auto;
+  margin-top: 85px;
+  width: 500px;
+  padding: 20px;
+  border-radius: 15px;
+}
+.col-sm-8 {
+  width: 62%;
+}
+.col-6 p {
+  text-align: center;
+  font-size: 1.3em;
+  line-height: 30px;
+}
+
+.col-6 {
+  height: 150px;
+}
