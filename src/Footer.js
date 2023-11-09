@@ -6,7 +6,7 @@ export default function Footer() {
     <div>
       <p className="open-source">
         <a
-          href="https://github.com/uncanny-vegan-taco/SheCodes-Plus--Project"
+          href="https://github.com/uncanny-vegan-taco/react-app"
           target="_blank"
           rel="noreferrer"
         >
