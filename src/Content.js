@@ -1,6 +1,6 @@
 import React from "react";
 import Search from "./Search";
-import OtherInfo from "./OtherInfo";
+
 import Forecast from "./Forecast";
 import Footer from "./Footer";
 
