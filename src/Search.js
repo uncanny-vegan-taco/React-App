@@ -3,7 +3,7 @@ import "./Search.css";
 import "./MainWeather.css";
 import "./OtherInfo.css";
 import axios from "axios";
-import moment from "moment";
+import FormattedDate from "./FormattedDate";
 
 export default function Search() {
   let [city, setCity] = useState("Seattle");
@@ -19,8 +19,10 @@ export default function Search() {
       feelTemp: Math.round(response.data.main.feels_like),
       humidity: response.data.main.humidity,
       wind: Math.round(response.data.wind.speed),
+      date: new Date(response.data.dt * 1000),
     });
     console.log(response.data);
+    console.log(weather.date);
   }
   function getWeather(event) {
     event.preventDefault();
@@ -73,8 +75,10 @@ export default function Search() {
         <div className="row">
           <div className="col-12 subheader">
             <p>
-              <span>{moment().format("MMMM do, H:mm")}</span> |{" "}
-              <span>{weather.description}</span>
+              <span>
+                <FormattedDate date={weather.date} />
+              </span>{" "}
+              | <span className="text-capitalize">{weather.description}</span>
             </p>
           </div>
         </div>
@@ -104,7 +108,7 @@ export default function Search() {
       <div className="col-12 info">
         <p>
           Humidity: <span>{weather.humidity}</span>% | Wind Speed:
-          <span>{weather.wind}mph</span>
+          <span> {weather.wind}mph</span>
         </p>
       </div>
     </div>
