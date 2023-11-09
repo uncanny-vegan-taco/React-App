@@ -4,14 +4,12 @@ import "./MainWeather.css";
 import "./OtherInfo.css";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
-import Default from "./Default";
 
 export default function Search() {
   let [city, setCity] = useState("Seattle");
   let [weather, setWeather] = useState({});
-  let [ready, setReady] = useState(false);
+
   function displayWeather(response) {
-    setReady(true);
     setWeather({
       name: response.data.name,
       mainTemp: Math.round(response.data.main.temp),
@@ -36,88 +34,83 @@ export default function Search() {
   function updateCity(event) {
     setCity(event.target.value);
   }
-  if (ready === true) {
-    return (
-      <div>
-        <form onSubmit={getWeather}>
-          <div className="row">
-            <div className="col-sm-8">
-              <input
-                name="place"
-                type="text"
-                className="form-control"
-                placeholder="Enter City Name..."
-                autoComplete="off"
-                onChange={updateCity}
-              />
-            </div>
-            <div className="col-2">
-              <button
-                id="main-search"
-                type="Submit"
-                className="btn btn-secondary"
-              >
-                Search
-              </button>
-            </div>
-            <div className="col-2">
-              <button
-                type="Submit"
-                className="btn btn-secondary"
-                id="current-button"
-              >
-                Current
-              </button>
-            </div>
-          </div>
-        </form>
+  return (
+    <div>
+      <form onSubmit={getWeather}>
         <div className="row">
-          <div className="col-12">
-            <h1>{weather.name}</h1>
+          <div className="col-sm-8">
+            <input
+              name="place"
+              type="text"
+              className="form-control"
+              placeholder="Enter City Name..."
+              autoComplete="off"
+              onChange={updateCity}
+            />
           </div>
-          <div className="row">
-            <div className="col-12 subheader">
-              <p>
-                <span>
-                  <FormattedDate date={weather.date} />
-                </span>{" "}
-                | <span className="text-capitalize">{weather.description}</span>
-              </p>
-            </div>
+          <div className="col-2">
+            <button
+              id="main-search"
+              type="Submit"
+              className="btn btn-secondary"
+            >
+              Search
+            </button>
           </div>
+          <div className="col-2">
+            <button
+              type="Submit"
+              className="btn btn-secondary"
+              id="current-button"
+            >
+              Current
+            </button>
+          </div>
+        </div>
+      </form>
+      <div className="row">
+        <div className="col-12">
+          <h1>{weather.name}</h1>
         </div>
         <div className="row">
-          <div className="col-6">
-            <img src={weather.icon} alt="icon" />
+          <div className="col-12 subheader">
+            <p>
+              <span>
+                <FormattedDate date={weather.date} />
+              </span>{" "}
+              | <span className="text-capitalize">{weather.description}</span>
+            </p>
           </div>
-          <div className="col-6 main-temp">
-            <h1>{weather.mainTemp}</h1>
-            <span className="fahrenheit">F&deg;</span>
-          </div>
-        </div>
-        <div className="col-12 other-temps">
-          <h2 className="description">
-            <span className="high-low-main">
-              <span>{weather.highTemp}</span>&deg; |
-              <span>{weather.lowTemp}</span>
-              &deg;
-            </span>
-            <br />
-            <div className="feels-like-text">
-              Feels Like: <span className="feels-like">{weather.feelTemp}</span>
-              &deg;
-            </div>
-          </h2>
-        </div>
-        <div className="col-12 info">
-          <p>
-            Humidity: <span>{weather.humidity}</span>% | Wind Speed:
-            <span> {weather.wind}mph</span>
-          </p>
         </div>
       </div>
-    );
-  } else {
-    return <Default />;
-  }
+      <div className="row">
+        <div className="col-6">
+          <img src={weather.icon} alt="icon" />
+        </div>
+        <div className="col-6 main-temp">
+          <h1>{weather.mainTemp}</h1>
+          <span className="fahrenheit">F&deg;</span>
+        </div>
+      </div>
+      <div className="col-12 other-temps">
+        <h2 className="description">
+          <span className="high-low-main">
+            <span>{weather.highTemp}</span>&deg; |<span>{weather.lowTemp}</span>
+            &deg;
+          </span>
+          <br />
+          <div className="feels-like-text">
+            Feels Like: <span className="feels-like">{weather.feelTemp}</span>
+            &deg;
+          </div>
+        </h2>
+      </div>
+      <div className="col-12 info">
+        <p>
+          Humidity: <span>{weather.humidity}</span>% | Wind Speed:
+          <span> {weather.wind}mph</span>
+        </p>
+      </div>
+    </div>
+  );
 }

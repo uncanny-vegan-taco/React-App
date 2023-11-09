@@ -11,7 +11,7 @@ export default function Footer() {
           rel="noreferrer"
         >
           Open Source Code
-        </a>
+        </a>{" "}
         by Kyli White
       </p>
     </div>
