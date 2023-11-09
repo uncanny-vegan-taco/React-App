@@ -11,7 +11,7 @@ export default function OtherInfo() {
           </span>
           <br />
           <div className="feels-like-text">
-            Feels Like: <span class="feels-like"></span>&deg;
+            Feels Like: <span className="feels-like"></span>&deg;
           </div>
         </h2>
       </div>
