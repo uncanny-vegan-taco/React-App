@@ -24,7 +24,8 @@ export default function Search() {
     });
     console.log(response.data);
   }
-  function getWeather() {
+  function getWeather(event) {
+    event.preventDefault();
     let api = "2ff29bed3181c3526c35cc5408037f85";
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}&units=imperial`;
     axios.get(url).then(displayWeather);
