@@ -7,9 +7,11 @@ import Weather from "./Weather";
 
 export default function Search() {
   let [city, setCity] = useState("Seattle");
-  let [weather, setWeather] = useState();
+  let [weather, setWeather] = useState({});
+  let [loaded, setLoaded] = useState(false);
 
   function displayWeather(response) {
+    setLoaded(true);
     setWeather({
       name: response.data.name,
       mainTemp: Math.round(response.data.main.temp),
@@ -26,49 +28,53 @@ export default function Search() {
   }
   function getWeather(event) {
     event.preventDefault();
-    let api = "2ff29bed3181c3526c35cc5408037f85";
+    let api = "197ef3a642b76eef90e131866f74a0a0";
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}&units=imperial`;
     axios.get(url).then(displayWeather);
   }
   function updateCity(event) {
     setCity(event.target.value);
   }
-
-  return (
-    <div>
-      <form onSubmit={getWeather}>
-        <div className="row">
-          <div className="col-sm-8">
-            <input
-              name="place"
-              type="text"
-              className="form-control"
-              placeholder="Enter City Name..."
-              autoComplete="off"
-              onChange={updateCity}
-            />
+  if (loaded) {
+    return (
+      <div>
+        <form onSubmit={getWeather}>
+          <div className="row">
+            <div className="col-sm-8">
+              <input
+                name="place"
+                type="text"
+                className="form-control"
+                placeholder="Enter City Name..."
+                autoComplete="off"
+                onChange={updateCity}
+              />
+            </div>
+            <div className="col-2">
+              <button
+                id="main-search"
+                type="Submit"
+                className="btn btn-secondary"
+              >
+                Search
+              </button>
+            </div>
+            <div className="col-2">
+              <button
+                type="Submit"
+                className="btn btn-secondary"
+                id="current-button"
+              >
+                Current
+              </button>
+            </div>
           </div>
-          <div className="col-2">
-            <button
-              id="main-search"
-              type="Submit"
-              className="btn btn-secondary"
-            >
-              Search
-            </button>
-          </div>
-          <div className="col-2">
-            <button
-              type="Submit"
-              className="btn btn-secondary"
-              id="current-button"
-            >
-              Current
-            </button>
-          </div>
-        </div>
-      </form>
-      <Weather weather={weather} />
-    </div>
-  );
+        </form>
+        <Weather weather={weather} />
+      </div>
+    );
+  } else {
+    getWeather({ preventDefault: function () {} });
+    return "Loading...";
+  }
 }
