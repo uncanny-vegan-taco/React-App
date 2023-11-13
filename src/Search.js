@@ -15,7 +15,7 @@ export default function Search() {
     setWeather({
       name: response.data.name,
       mainTemp: Math.round(response.data.main.temp),
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
       description: response.data.weather[0].description,
       highTemp: Math.round(response.data.main.temp_max),
       lowTemp: Math.round(response.data.main.temp_min),
