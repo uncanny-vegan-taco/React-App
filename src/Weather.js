@@ -1,4 +1,5 @@
 import React from "react";
+import "./Header.css";
 import "./Search.css";
 import "./MainWeather.css";
 import "./OtherInfo.css";
@@ -16,10 +17,7 @@ export default function Weather(props) {
         <div className="row">
           <div className="col-12 subheader">
             <p>
-              <span>
-                <FormattedDate date={props.weather.date} />
-              </span>{" "}
-              |{" "}
+              <FormattedDate date={props.weather.date} /> |{" "}
               <span className="text-capitalize">
                 {props.weather.description}
               </span>
@@ -27,8 +25,8 @@ export default function Weather(props) {
           </div>
         </div>
       </div>
-      <div className="row">
-        <div className="col-6">
+      <div className="row d-flex main">
+        <div className="col-6 icon">
           <WeatherIcons code={props.weather.icon} />
         </div>
         <div className="col-6 main-temp">

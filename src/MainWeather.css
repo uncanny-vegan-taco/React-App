@@ -1,15 +1,16 @@
-img {
-  display: block;
-  width: 100%;
+.main {
+  flex-direction: row;
+}
+.icon {
+  text-align: end;
 }
 .main-temp {
   line-height: 50px;
-  position: relative;
-  right: 30px;
 }
 
 .main-temp h1 {
   font-size: 7em;
+  text-align: start;
 }
 .fahrenheit {
   font-size: 2em;
@@ -17,5 +18,5 @@ img {
   text-decoration: none;
   position: relative;
   bottom: 125px;
-  left: 168px;
+  left: 130px;
 }
