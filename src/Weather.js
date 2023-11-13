@@ -1,10 +1,8 @@
 import React from "react";
 import "./Header.css";
 import "./Search.css";
-import "./MainWeather.css";
 import "./OtherInfo.css";
-import WeatherIcons from "./WeatherIcons";
-
+import WeatherTemperature from "./WeatherTemperature";
 import FormattedDate from "./FormattedDate";
 
 export default function Weather(props) {
@@ -25,29 +23,14 @@ export default function Weather(props) {
           </div>
         </div>
       </div>
-      <div className="row d-flex main">
-        <div className="col-6 icon">
-          <WeatherIcons code={props.weather.icon} />
-        </div>
-        <div className="col-6 main-temp">
-          <h1>{props.weather.mainTemp}</h1>
-          <span className="fahrenheit">F&deg;</span>
-        </div>
-      </div>
-      <div className="col-12 other-temps">
-        <h2 className="description">
-          <span className="high-low-main">
-            <span>{props.weather.highTemp}</span>&deg; |
-            <span>{props.weather.lowTemp}</span>
-            &deg;
-          </span>
-          <br />
-          <div className="feels-like-text">
-            Feels Like:{" "}
-            <span className="feels-like">{props.weather.feelTemp}</span>
-            &deg;
-          </div>
-        </h2>
+      <div className="row">
+        <WeatherTemperature
+          icon={props.weather.icon}
+          fahrenheitMain={props.weather.mainTemp}
+          fahrenheitHigh={props.weather.highTemp}
+          fahrenheitLow={props.weather.lowTemp}
+          fahrenheitFeel={props.weather.feelTemp}
+        />
       </div>
       <div className="col-12 info">
         <p>

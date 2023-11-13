@@ -1,4 +1,5 @@
 .main {
+  display: flex;
   flex-direction: row;
 }
 .icon {
@@ -10,13 +11,10 @@
 
 .main-temp h1 {
   font-size: 7em;
-  text-align: start;
+  margin-left: 10px;
 }
-.fahrenheit {
-  font-size: 2em;
+.unit {
+  font-size: 1.5em;
   color: #212529;
   text-decoration: none;
-  position: relative;
-  bottom: 125px;
-  left: 130px;
 }
