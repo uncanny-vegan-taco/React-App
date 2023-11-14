@@ -43,7 +43,7 @@ export default function Search() {
       <div>
         <form onSubmit={getWeather}>
           <div className="row">
-            <div className="col-sm-8">
+            <div className="col-sm-10">
               <input
                 name="place"
                 type="text"
@@ -60,15 +60,6 @@ export default function Search() {
                 className="btn btn-secondary"
               >
                 Search
-              </button>
-            </div>
-            <div className="col-2">
-              <button
-                type="Submit"
-                className="btn btn-secondary"
-                id="current-button"
-              >
-                Current
               </button>
             </div>
           </div>
