@@ -24,6 +24,8 @@ export default function Search() {
       humidity: response.data.main.humidity,
       wind: Math.round(response.data.wind.speed),
       date: new Date(response.data.dt * 1000),
+      lat: response.data.coord.lat,
+      lon: response.data.coord.lon,
     });
     console.log(response.data);
   }
@@ -72,7 +74,7 @@ export default function Search() {
           </div>
         </form>
         <Weather weather={weather} />
-        <Forecast />
+        <Forecast lat={weather.lat} lon={weather.lon} />
       </div>
     );
   } else {
