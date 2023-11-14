@@ -4,6 +4,7 @@ import "./MainWeather.css";
 import "./OtherInfo.css";
 import axios from "axios";
 import Weather from "./Weather";
+import Forecast from "./Forecast";
 
 export default function Search() {
   let [city, setCity] = useState("Seattle");
@@ -71,6 +72,7 @@ export default function Search() {
           </div>
         </form>
         <Weather weather={weather} />
+        <Forecast />
       </div>
     );
   } else {

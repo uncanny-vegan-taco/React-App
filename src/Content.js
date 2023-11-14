@@ -10,7 +10,7 @@ export default function Content() {
       <div className="content">
         <div className="row">
           <Search />
-          <Forecast />
+
           <Footer />
         </div>
       </div>

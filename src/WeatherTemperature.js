@@ -34,8 +34,8 @@ export default function WeatherTemperature(props) {
         <div className="col-12 other-temps">
           <h2 className="description">
             <span className="high-low-main">
-              <span>{props.fahrenheitHigh}</span>&deg; |
-              <span>{props.fahrenheitLow}</span>
+              <span>{props.fahrenheitHigh}</span>&deg; |{" "}
+              <span> {props.fahrenheitLow}</span>
               &deg;
             </span>
             <br />
@@ -72,7 +72,7 @@ export default function WeatherTemperature(props) {
         <div className="col-12 other-temps">
           <h2 className="description">
             <span className="high-low-main">
-              <span>{celsiusHigh}</span>&deg; |<span>{celsiusLow}</span>
+              <span>{celsiusHigh}</span>&deg; | <span>{celsiusLow}</span>
               &deg;
             </span>
             <br />
