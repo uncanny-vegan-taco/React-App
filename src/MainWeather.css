@@ -19,3 +19,11 @@
   color: #212529;
   text-decoration: none;
 }
+@media (max-width: 550px) {
+  .main-temp h1 {
+    font-size: 5em;
+  }
+  .unit {
+    font-size: 1.2em;
+  }
+}

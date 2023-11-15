@@ -12,3 +12,14 @@
 .forecast-high {
   font-weight: bold;
 }
+@media (max-width: 550px) {
+  .forecast-temps {
+    font-size: 0.5em;
+  }
+  .forecast-icon {
+    width: 75%;
+  }
+  .day {
+    font-size: 0.8em;
+  }
+}

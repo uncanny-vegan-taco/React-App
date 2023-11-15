@@ -20,3 +20,9 @@ input {
 .btn:hover {
   background-color: #616161;
 }
+@media (max-width: 550px) {
+  form {
+    width: 100%;
+    margin: 0;
+  }
+}
