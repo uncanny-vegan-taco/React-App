@@ -43,11 +43,10 @@ export default function Search() {
       <div>
         <form onSubmit={getWeather}>
           <div className="row">
-            <div className="col-sm-10">
+            <div className="col-9">
               <input
                 name="place"
                 type="text"
-                className="form-control"
                 placeholder="Enter City Name..."
                 autoComplete="off"
                 onChange={updateCity}

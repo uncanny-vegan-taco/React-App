@@ -1,16 +1,22 @@
 form {
   height: 60px;
+  margin-left: 15px;
 }
 input {
   width: 100%;
   margin-bottom: 20px;
   background-color: transparent;
+  border: 1px solid #616161;
+  border-radius: 4px;
+  padding: 6px 12px;
   color: white;
 }
+
 .btn {
   background-color: transparent;
   transition: 200ms ease-in-out;
+  border: 1px #616161 solid;
 }
 .btn:hover {
-  background-color: #212529;
+  background-color: #616161;
 }

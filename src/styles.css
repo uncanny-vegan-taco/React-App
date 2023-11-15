@@ -1,7 +1,12 @@
 body {
   width: 100vw;
   height: 100vh;
-  background-color: rgba(42, 42, 201, 0.411);
+  background: linear-gradient(
+    96.2deg,
+    rgb(255, 230, 112) 10.4%,
+    rgb(255, 100, 100) 43.8%,
+    rgb(0, 93, 219) 105.8%
+  );
 }
 .content {
   display: block;
@@ -10,7 +15,9 @@ body {
   width: 500px;
   padding: 20px;
   border-radius: 15px;
+  background-color: rgba(201, 201, 201, 0.205);
 }
+
 .col-sm-8 {
   width: 62%;
 }
