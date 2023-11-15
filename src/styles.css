@@ -7,6 +7,7 @@ body {
     rgb(255, 100, 100) 43.8%,
     rgb(0, 93, 219) 105.8%
   );
+  background-repeat: no-repeat;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
